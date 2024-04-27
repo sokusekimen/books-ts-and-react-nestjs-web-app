@@ -1,9 +1,5 @@
 # books-ts-and-react-nestjs-web-app
-技術評論社「TypeScriptとReact/Next.jsでつくる 実践Webアプリケーション開発」勉強用リポジトリ
-
-## メモ基準
-- 知らなかったこと
-- 動かして確認したいこと
+技術評論社「TypeScriptとReact/Next.jsでつくる実践Webアプリケーション開発」勉強用リポジトリ
 
 ## リンク
 - [サポートページ：TypeScriptとReact/Next.jsでつくる 実践Webアプリケーション開発：｜技術評論社](https://gihyo.jp/book/2022/978-4-297-12916-3/support)
