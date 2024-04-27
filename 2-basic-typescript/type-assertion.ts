@@ -9,7 +9,7 @@ console.log(myCanvas.width); //ここでTS2339エラーにになる
 // アサーションできるのは下記
 // - より具体的な型
 // - より汎化する型
-const myCanvas = document.getElementById('main_canvas') as HTMLCanvasElement;
+const myCanvas2 = document.getElementById('main_canvas') as HTMLCanvasElement;
 
 // asを乱用するとコンパイルエラーにならないことがあるので注意
 const hoge: any = 'test';
