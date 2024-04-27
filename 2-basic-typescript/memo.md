@@ -1,1 +1,7 @@
 - tsc はTypeScriptのCLI
+- 一般的に普及しているコーディングスタイルガイド
+  - JavaScript Standardスタイルガイド
+  - Airbnbスタイルガイド
+  - Googleスタイルガイド
+  - TypeScript Deep Diveスタイルガイド
+- Next.jsはV11.0以降eslint-plugin-nextを採用している
