@@ -26,7 +26,7 @@ const Child = () => {
   );
 };
 
-export const GrandChildParent = () => {
+export const ParentWithGrandChild = () => {
   const user: User = {
     id: 1,
     name: 'Alice',

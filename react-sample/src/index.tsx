@@ -10,7 +10,7 @@ import { FizzBuzz } from './components/FizzBuzz';
 import { CounterWithCallback } from './components/CounterWithCallback';
 import { UseMemoSample } from './components/UseMemoSample';
 import { Clock } from './components/Clock';
-import { GrandChildParent } from './components/GrandChildParent';
+import { ParentWithGrandChild } from './components/ParentWithGrandChild';
 import { ImageUploader } from './components/ImageUploader'
 
 import reportWebVitals from './reportWebVitals';
@@ -25,7 +25,7 @@ root.render(
     <hr />
     <Clock />
     <hr />
-    <GrandChildParent />
+    <ParentWithGrandChild />
     <hr />
     <ImageUploader />
   </React.StrictMode>
