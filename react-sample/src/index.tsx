@@ -10,6 +10,7 @@ import { FizzBuzz } from './components/FizzBuzz';
 import { CounterWithCallback } from './components/CounterWithCallback';
 import { UseMemoSample } from './components/UseMemoSample';
 import { Clock } from './components/Clock';
+import { GrandChildParent } from './components/GrandChildParent';
 
 import reportWebVitals from './reportWebVitals';
 
@@ -20,7 +21,10 @@ root.render(
   // 不適切なコードを検知するヘルパー
   <React.StrictMode>
     <UseMemoSample />
+    <hr />
     <Clock />
+    <hr />
+    <GrandChildParent />
   </React.StrictMode>
 );
 
