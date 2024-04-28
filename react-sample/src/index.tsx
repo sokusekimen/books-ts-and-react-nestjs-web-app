@@ -1,11 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
+
 // import App from './App';
+import Hello from './components/Hello';
+import Parent from './components/ContainerSample';
+import CounterWithReducer from './components/CouterWithReducer';
+
 import reportWebVitals from './reportWebVitals';
 
-import Hello from './components/Hello';
-import Parent from './components/CntainerSample';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -13,8 +16,7 @@ const root = ReactDOM.createRoot(
 root.render(
   // 不適切なコードを検知するヘルパー
   <React.StrictMode>
-    <Hello />
-    <Parent />
+    <CounterWithReducer initialValue={0} />
   </React.StrictMode>
 );
 
