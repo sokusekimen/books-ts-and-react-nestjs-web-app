@@ -5,11 +5,11 @@ import './index.css';
 // import App from './App';
 import Hello from './components/Hello';
 import Parent from './components/ContainerSample';
-import CounterWithReducer from './components/CouterWithReducer';
+import CounterWithReducer from './components/CounterWithReducer';
 import { FizzBuzz } from './components/FizzBuzz';
+import { CounterWithCallback } from './components/CounterWithCallback';
 
 import reportWebVitals from './reportWebVitals';
-
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -17,7 +17,7 @@ const root = ReactDOM.createRoot(
 root.render(
   // 不適切なコードを検知するヘルパー
   <React.StrictMode>
-    <FizzBuzz />
+    <CounterWithCallback />
   </React.StrictMode>
 );
 

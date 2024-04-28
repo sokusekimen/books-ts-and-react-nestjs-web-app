@@ -26,7 +26,7 @@ type CounterProps = {
 }
 
 // 使用方法は下記
-// <Couter initialValue={0} />
+// <Counter initialValue={0} />
 const CounterWithReducer = (props: CounterProps) => {
   const { initialValue } = props;
   const [count, dispatch] = useReducer(reducer, initialValue);
