@@ -8,6 +8,7 @@ import Parent from './components/ContainerSample';
 import CounterWithReducer from './components/CounterWithReducer';
 import { FizzBuzz } from './components/FizzBuzz';
 import { CounterWithCallback } from './components/CounterWithCallback';
+import { UseMemoSample } from './components/UseMemoSample';
 
 import reportWebVitals from './reportWebVitals';
 
@@ -17,7 +18,7 @@ const root = ReactDOM.createRoot(
 root.render(
   // 不適切なコードを検知するヘルパー
   <React.StrictMode>
-    <CounterWithCallback />
+    <UseMemoSample />
   </React.StrictMode>
 );
 
