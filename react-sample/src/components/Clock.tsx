@@ -59,16 +59,13 @@ export const Clock = () => {
 
     const savedLocale = localStorage.getItem(kEY_LOCALE);
     if (savedLocale !== null) {
-      console.log(2, savedLocale);
       setLocale(getLocaleFromString(savedLocale));
-      console.log(2.1, locale);
     }
   }, []);
 
   useEffect(() => {
     // 描画時、上のuseLayoutEffectのsetLocaleより前にデフォルトのlocaleをsetしている
     // 多分use*Effectが終わったタイミングでsetされるのであろう
-    console.log(3, locale)
     localStorage.setItem(kEY_LOCALE, locale);
   }, [locale]);
 
