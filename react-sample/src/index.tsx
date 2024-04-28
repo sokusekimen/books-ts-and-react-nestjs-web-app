@@ -12,6 +12,7 @@ import { UseMemoSample } from './components/UseMemoSample';
 import { Clock } from './components/Clock';
 import { ParentWithGrandChild } from './components/ParentWithGrandChild';
 import { ImageUploader } from './components/ImageUploader'
+import { ParentWithUseImperativeHandle } from './components/ParentWithUseImperativeHandle'
 
 import reportWebVitals from './reportWebVitals';
 
@@ -28,6 +29,8 @@ root.render(
     <ParentWithGrandChild />
     <hr />
     <ImageUploader />
+    <hr />
+    <ParentWithUseImperativeHandle />
   </React.StrictMode>
 );
 
