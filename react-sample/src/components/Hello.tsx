@@ -1,4 +1,4 @@
-// 3.1.3 p79
+// リスト3.4 p79
 const Hello = () => {
   const onClick = () => {
     alert('hello');
