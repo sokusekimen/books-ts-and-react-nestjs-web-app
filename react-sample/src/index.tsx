@@ -6,6 +6,7 @@ import './index.css';
 import Hello from './components/Hello';
 import Parent from './components/ContainerSample';
 import CounterWithReducer from './components/CouterWithReducer';
+import { FizzBuzz } from './components/FizzBuzz';
 
 import reportWebVitals from './reportWebVitals';
 
@@ -16,7 +17,7 @@ const root = ReactDOM.createRoot(
 root.render(
   // 不適切なコードを検知するヘルパー
   <React.StrictMode>
-    <CounterWithReducer initialValue={0} />
+    <FizzBuzz />
   </React.StrictMode>
 );
 
