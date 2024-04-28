@@ -11,6 +11,7 @@ import { CounterWithCallback } from './components/CounterWithCallback';
 import { UseMemoSample } from './components/UseMemoSample';
 import { Clock } from './components/Clock';
 import { GrandChildParent } from './components/GrandChildParent';
+import { ImageUploader } from './components/ImageUploader'
 
 import reportWebVitals from './reportWebVitals';
 
@@ -25,6 +26,8 @@ root.render(
     <Clock />
     <hr />
     <GrandChildParent />
+    <hr />
+    <ImageUploader />
   </React.StrictMode>
 );
 
