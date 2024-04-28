@@ -9,6 +9,7 @@ import CounterWithReducer from './components/CounterWithReducer';
 import { FizzBuzz } from './components/FizzBuzz';
 import { CounterWithCallback } from './components/CounterWithCallback';
 import { UseMemoSample } from './components/UseMemoSample';
+import { Clock } from './components/Clock';
 
 import reportWebVitals from './reportWebVitals';
 
@@ -19,6 +20,7 @@ root.render(
   // 不適切なコードを検知するヘルパー
   <React.StrictMode>
     <UseMemoSample />
+    <Clock />
   </React.StrictMode>
 );
 
