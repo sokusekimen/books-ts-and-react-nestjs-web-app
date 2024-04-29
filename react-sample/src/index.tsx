@@ -1,8 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-
 // import App from './App';
+import reportWebVitals from './reportWebVitals';
+
 import Hello from './components/Hello';
 import Parent from './components/ContainerSample';
 import CounterWithReducer from './components/CounterWithReducer';
@@ -13,8 +14,7 @@ import { Clock } from './components/Clock';
 import { ParentWithGrandChild } from './components/ParentWithGrandChild';
 import { ImageUploader } from './components/ImageUploader'
 import { ParentWithUseImperativeHandle } from './components/ParentWithUseImperativeHandle'
-
-import reportWebVitals from './reportWebVitals';
+import { InputWithUseInput } from './components/InputWithUseInput';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -31,6 +31,8 @@ root.render(
     <ImageUploader />
     <hr />
     <ParentWithUseImperativeHandle />
+    <hr />
+    <InputWithUseInput />
   </React.StrictMode>
 );
 
