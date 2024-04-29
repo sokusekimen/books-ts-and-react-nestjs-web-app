@@ -10,7 +10,6 @@ const useInput = () => {
 
   useDebugValue(`Input: ${state}`);
 
-  // as constにすることで呼び出し元で
   return [state, onChange] as const;
 }
 
