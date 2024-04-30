@@ -1,35 +1,27 @@
-import React, { useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { StyledButton } from '../components/StyledButton';
-import { action } from '@storybook/addon-actions';
+import { StyledButton, StyledButtonProps } from '../components/StyledButton';
 
 const meta: Meta<typeof StyledButton> = {
   component: StyledButton,
+  argTypes: {
+    variant: {
+      control: { type: 'radio' },
+      options: ['primary', 'success', 'transparent'],
+    },
+    // コンポーネントだけでなくテキストもChildrenなのね
+    children: {
+      control: { type: 'text' },
+    },
+  },
 };
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-const incrementAction = action('increment');
-
-export const Primary: Story = {
-  render: () => {
-    const [count, setCount] = useState(0);
-    const onClick = (e: React.MouseEvent) => {
-      incrementAction(e, count);
-      setCount((c) => c + 1);
-    }
-
-    return (
-      <StyledButton variant='primary' onClick={onClick}>
-        Count: {count}
-      </StyledButton>
-    );
-  }
-};
-export const Success: Story = {
-  render: () => <StyledButton variant='success'>Success</StyledButton>
-};
-export const Transparent: Story = {
-  render: () => <StyledButton variant='transparent'>Transparent</StyledButton>
+export const TemplateTest: StoryObj<typeof StyledButton> = {
+  args: {
+    variant: 'primary',
+    children: 'Primary',
+  },
+  render: (args) => <StyledButton {...args} />,
 };
