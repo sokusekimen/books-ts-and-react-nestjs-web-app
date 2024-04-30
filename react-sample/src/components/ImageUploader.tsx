@@ -1,4 +1,7 @@
 // 3.5.5 useRef p107
+// レンダリングに使わない内部で使う変数を保持するために使用する
+// 生DOMを参照する使い方
+// memo化とstateがあるので、その他の使い方はあまりしないかも
 
 import React, { useState, useRef } from 'react';
 
