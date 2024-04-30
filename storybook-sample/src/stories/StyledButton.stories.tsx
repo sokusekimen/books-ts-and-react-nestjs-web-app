@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { StyledButton, StyledButtonProps } from '../components/StyledButton';
+import MDXDocument from './StyledButton.mdx';
 
 const meta: Meta<typeof StyledButton> = {
   component: StyledButton,
@@ -11,6 +12,11 @@ const meta: Meta<typeof StyledButton> = {
     // コンポーネントだけでなくテキストもChildrenなのね
     children: {
       control: { type: 'text' },
+    },
+  },
+  parameters: {
+    docs: {
+      page: MDXDocument,
     },
   },
 };
