@@ -14,9 +14,9 @@ export const UseMemoSample = () => {
     setText('');
   }
 
-  // 描画事に計算が走る
+  // itemsがかわらないのでわかりにくいがinputされる事に計算が走る
   const numberOfCharacters1 = items.reduce((sub, item) => sub + item.length, 0);
-  // itemsが更新されたときのみ
+  // items(= buttonクリック時のみ)が更新されたときのみ
   const numberOfCharacters2 = useMemo(() => {
     return items.reduce((sub, item) => sub + item.length, 0);
   }, [items]);
