@@ -1,4 +1,4 @@
-import { ComponentMeta } from '@storybook/react'
+import { Meta } from '@storybook/react'
 import React, { useEffect } from 'react'
 import Header from './index'
 import { AuthContextProvider } from 'contexts/AuthContext'
@@ -7,7 +7,7 @@ import {
   useShoppingCartContext,
 } from 'contexts/ShoppingCartContext'
 
-export default { title: 'organisms/Header' } as ComponentMeta<typeof Header>
+export default { title: 'organisms/Header' } as Meta<typeof Header>
 
 export const NoLogin = () => <Header />
 

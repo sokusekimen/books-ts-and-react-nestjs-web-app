@@ -1,4 +1,4 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/react'
 import Input from './index'
 
 export default {
@@ -28,11 +28,12 @@ export default {
       },
     },
   },
-} as ComponentMeta<typeof Input>
+} as Meta<typeof Input>
 
-const Template: ComponentStory<typeof Input> = (args) => <Input {...args} />
-
-export const Normal = Template.bind({})
-
-export const Error = Template.bind({})
-Error.args = { hasError: true }
+export const Normal: StoryObj<typeof Input> = {
+  render: (args) => <Input {...args} />,
+}
+export const Error: StoryObj<typeof Input> = {
+  args: { hasError: true },
+  render: (args) => <Input {...args} />,
+}

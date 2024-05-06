@@ -1,4 +1,4 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/react'
 import ScaleImage from './index'
 
 export default {
@@ -44,11 +44,9 @@ export default {
       },
     },
   },
-} as ComponentMeta<typeof ScaleImage>
+} as Meta<typeof ScaleImage>
 
-const Template: ComponentStory<typeof ScaleImage> = (args) => (
-  <ScaleImage {...args} />
-)
-
-export const Normal = Template.bind({})
-Normal.args = { src: '/images/sample/1.jpg' }
+export const Normal: StoryObj<typeof ScaleImage> = {
+  args: { src: '/images/sample/1.jpg' },
+  render: (args) => <ScaleImage {...args} />,
+}

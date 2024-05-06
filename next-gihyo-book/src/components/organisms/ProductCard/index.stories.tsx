@@ -1,4 +1,4 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/react';
 import ProductCard from './index'
 
 export default {
@@ -43,35 +43,37 @@ export default {
       },
     },
   },
-} as ComponentMeta<typeof ProductCard>
-
-const Template: ComponentStory<typeof ProductCard> = (args) => (
-  <ProductCard {...args} />
-)
+} as Meta<typeof ProductCard>
 
 // Listingカード
-export const Listing = Template.bind({})
-Listing.args = {
-  variant: 'listing',
-  title: 'ナイスシューズ',
-  imageUrl: '/images/sample/1.jpg',
-  price: 2000,
+export const Listing: StoryObj<typeof ProductCard> = {
+  args: {
+    variant: 'listing',
+    title: 'ナイスシューズ',
+    imageUrl: '/images/sample/1.jpg',
+    price: 2000,
+  },
+  render: (args) => <ProductCard {...args} />,
 }
 
 // Smallカード
-export const Small = Template.bind({})
-Small.args = {
-  variant: 'small',
-  title: 'ナイスシューズ',
-  imageUrl: '/images/sample/1.jpg',
-  price: 2000,
+export const Small: StoryObj<typeof ProductCard> = {
+  args: {
+    variant: 'small',
+    title: 'ナイスシューズ',
+    imageUrl: '/images/sample/1.jpg',
+    price: 2000,
+  },
+  render: (args) => <ProductCard {...args} />,
 }
 
 // Detailカード
-export const Detail = Template.bind({})
-Detail.args = {
-  variant: 'detail',
-  title: 'ナイスシューズ',
-  imageUrl: '/images/sample/1.jpg',
-  price: 2000,
+export const Detail: StoryObj<typeof ProductCard> = {
+  args: {
+    variant: 'detail',
+    title: 'ナイスシューズ',
+    imageUrl: '/images/sample/1.jpg',
+    price: 2000,
+  },
+  render: (args) => <ProductCard {...args} />,
 }

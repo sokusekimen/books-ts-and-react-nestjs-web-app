@@ -1,4 +1,4 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/react'
 import Button from './index'
 
 export default {
@@ -52,18 +52,31 @@ export default {
       },
     },
   },
-} as ComponentMeta<typeof Button>
-
-const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />
+} as Meta<typeof Button>
 
 // Primaryボタン
-export const Primary = Template.bind({})
-Primary.args = { variant: 'primary', children: 'Primary Button' }
+export const Primary: StoryObj<typeof Button> = {
+  args: {
+    variant: 'primary',
+    children: 'Primary Button'
+  },
+  render: (args) => <Button {...args} />,
+}
 
 // Secondaryボタン
-export const Secondary = Template.bind({})
-Secondary.args = { variant: 'secondary', children: 'Secondary Button' }
+export const Secondary: StoryObj<typeof Button> = {
+  args: {
+    variant: 'secondary',
+    children: 'Secondary Button'
+  },
+  render: (args) => <Button {...args} />,
+}
 
 // Disabledボタン
-export const Disabled = Template.bind({})
-Disabled.args = { disabled: true, children: 'Disabled Button' }
+export const Disabled: StoryObj<typeof Button> = {
+  args: {
+    disabled: true,
+    children: 'Disabled Button'
+  },
+  render: (args) => <Button {...args} />,
+}

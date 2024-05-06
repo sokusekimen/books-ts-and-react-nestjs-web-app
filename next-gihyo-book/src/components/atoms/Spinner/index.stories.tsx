@@ -1,4 +1,4 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/react'
 import styled from 'styled-components'
 import Spinner from './index'
 
@@ -30,7 +30,7 @@ export default {
       },
     },
   },
-} as ComponentMeta<typeof Spinner>
+} as Meta<typeof Spinner>
 
 const SpinnerWrapper = styled.div`
   position: fixed;
@@ -44,10 +44,12 @@ const SpinnerWrapper = styled.div`
   z-index: 1199;
 `
 
-const Template: ComponentStory<typeof Spinner> = (args) => (
-  <SpinnerWrapper>
-    <Spinner {...args} />
-  </SpinnerWrapper>
-)
-
-export const Normal = Template.bind({})
+export const Primary: StoryObj<typeof Spinner> = {
+  render: (args) => {
+    return (
+      <SpinnerWrapper>
+        <Spinner {...args} />
+      </SpinnerWrapper>
+    )
+  },
+}

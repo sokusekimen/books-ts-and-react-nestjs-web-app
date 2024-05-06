@@ -1,4 +1,4 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/react'
 import CartProduct from './index'
 
 export default {
@@ -45,16 +45,14 @@ export default {
       },
     },
   },
-} as ComponentMeta<typeof CartProduct>
+} as Meta<typeof CartProduct>
 
-const Template: ComponentStory<typeof CartProduct> = (args) => (
-  <CartProduct {...args} />
-)
-
-export const NiceShoes = Template.bind({})
-NiceShoes.args = {
-  id: 1,
-  imageUrl: '/images/sample/1.jpg',
-  title: 'ナイスシューズ',
-  price: 3200,
+export const Primary: StoryObj<typeof CartProduct> = {
+  args: {
+    id: 1,
+    imageUrl: '/images/sample/1.jpg',
+    title: 'ナイスシューズ',
+    price: 3200,
+  },
+  render: (args) => <CartProduct {...args} />,
 }

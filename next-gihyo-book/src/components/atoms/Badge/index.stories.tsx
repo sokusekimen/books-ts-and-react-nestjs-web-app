@@ -1,4 +1,4 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/react'
 import Badge from './index'
 
 export default {
@@ -19,15 +19,19 @@ export default {
       },
     },
   },
-} as ComponentMeta<typeof Badge>
+} as Meta<typeof Badge>
 
-const Template: ComponentStory<typeof Badge> = (args) => <Badge {...args} />
+export const Orange: StoryObj<typeof Badge> = {
+  args: { content: '1', backgroundColor: '#ed9f28' },
+  render: (args) => <Badge {...args} />,
+}
 
-export const Orange = Template.bind({})
-Orange.args = { content: '1', backgroundColor: '#ed9f28' }
+export const Green: StoryObj<typeof Badge> = {
+  args: { content: '2', backgroundColor: '#32bf00' },
+  render: (args) => <Badge {...args} />,
+}
 
-export const Green = Template.bind({})
-Green.args = { content: '2', backgroundColor: '#32bf00' }
-
-export const Red = Template.bind({})
-Red.args = { content: '10', backgroundColor: '#d4001a' }
+export const Red: StoryObj<typeof Badge> = {
+  args: { content: '10', backgroundColor: '#d4001a' },
+  render: (args) => <Badge {...args} />,
+}

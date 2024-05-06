@@ -1,4 +1,4 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/react'
 import RectLoader from './index'
 
 export default {
@@ -21,10 +21,8 @@ export default {
       },
     },
   },
-} as ComponentMeta<typeof RectLoader>
+} as Meta<typeof RectLoader>
 
-const Template: ComponentStory<typeof RectLoader> = (args) => (
-  <RectLoader {...args} />
-)
-
-export const Normal = Template.bind({})
+export const Primary: StoryObj<typeof RectLoader> = {
+  render: (args) => <RectLoader {...args} />,
+}

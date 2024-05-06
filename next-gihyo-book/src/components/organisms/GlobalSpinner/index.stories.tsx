@@ -1,4 +1,4 @@
-import { ComponentMeta } from '@storybook/react'
+import { Meta } from '@storybook/react'
 import GlobalSpinner from './index'
 import Button from 'components/atoms/Button'
 import GlobalSpinnerContextProvider, {
@@ -7,7 +7,7 @@ import GlobalSpinnerContextProvider, {
 
 export default {
   title: 'organisms/GlobalSpinner',
-} as ComponentMeta<typeof GlobalSpinner>
+} as Meta<typeof GlobalSpinner>
 
 export const WithContextProvider = () => {
   const ChildComponent = () => {

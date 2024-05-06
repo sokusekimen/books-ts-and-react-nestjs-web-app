@@ -1,8 +1,8 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react'
-import React, { useState, useEffect } from 'react'
-import Dropzone from './index'
-import Button from 'components/atoms/Button'
-import Box from 'components/layout/Box'
+import type { Meta, StoryObj } from '@storybook/react';
+import React, { useState, useEffect } from 'react';
+import Dropzone from './index';
+import Button from 'components/atoms/Button';
+import Box from 'components/layout/Box';
 
 export default {
   title: 'Molecules/Dropzone',
@@ -51,62 +51,57 @@ export default {
       },
     },
   },
-} as ComponentMeta<typeof Dropzone>
+} as Meta<typeof Dropzone>;
 
-const Template: ComponentStory<typeof Dropzone> = (args) => {
-  const [files, setFiles] = useState<File[]>([])
-  const handleDrop = (files: File[]) => {
-    setFiles(files)
-    args && args.onDrop && args.onDrop(files)
-  }
+export const WithControl: StoryObj<typeof Dropzone> = {
+  args: {
+    height: 200,
+    width: '100%',
+    acceptedFileTypes: ['image/png', 'image/jpeg', 'image/jpg', 'image/gif'],
+    hasError: false,
+  },
+  render: (args) => {
+    const [files, setFiles] = useState<File[]>([]);
+    const handleDrop = (files: File[]) => {
+      setFiles(files);
+      args && args.onDrop && args.onDrop(files);
+    };
 
-  const fetchData = async () => {
-    const res = await fetch('/images/sample/1.jpg')
-    const blob = await res.blob()
-    const file = new File([blob], '1.png', blob)
+    const fetchData = async () => {
+      const res = await fetch('/images/sample/1.jpg');
+      const blob = await res.blob();
+      const file = new File([blob], '1.png', blob);
 
-    setFiles([...files, file])
-  }
+      setFiles([...files, file]);
+    };
 
-  const clearImages = () => {
-    setFiles([])
-  }
+    const clearImages = () => {
+      setFiles([]);
+    };
 
-  useEffect(() => {
-    fetchData()
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+    useEffect(() => {
+      fetchData();
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
 
-  return (
-    <>
-      <Box marginBottom={1}>
-        <Dropzone {...args} value={files} onDrop={handleDrop} />
-      </Box>
-      <Box marginBottom={1}>
-        <Button onClick={fetchData}>画像を追加</Button>
-      </Box>
-      <Box marginBottom={2}>
-        <Button onClick={clearImages}>全ての画像をクリア</Button>
-      </Box>
-      <Box>
-        {files.map((f, i) => (
-          // eslint-disable-next-line @next/next/no-img-element
-          <img
-            src={URL.createObjectURL(f)}
-            width="100px"
-            key={i}
-            alt="sample"
-          />
-        ))}
-      </Box>
-    </>
-  )
-}
-
-export const WithControl = Template.bind({})
-WithControl.args = {
-  height: 200,
-  width: '100%',
-  acceptedFileTypes: ['image/png', 'image/jpeg', 'image/jpg', 'image/gif'],
-  hasError: false,
-}
+    return (
+      <>
+        <Box marginBottom={1}>
+          <Dropzone {...args} value={files} onDrop={handleDrop} />
+        </Box>
+        <Box marginBottom={1}>
+          <Button onClick={fetchData}>画像を追加</Button>
+        </Box>
+        <Box marginBottom={2}>
+          <Button onClick={clearImages}>全ての画像をクリア</Button>
+        </Box>
+        <Box>
+          {files.map((f, i) => (
+            // eslint-disable-next-line @next/next/no-img-element
+            <img src={URL.createObjectURL(f)} width="100px" key={i} alt="sample" />
+          ))}
+        </Box>
+      </>
+    );
+  },
+};

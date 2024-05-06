@@ -1,4 +1,4 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/react'
 import Dropdown from './index'
 
 export default {
@@ -40,39 +40,41 @@ export default {
       },
     },
   },
-} as ComponentMeta<typeof Dropdown>
+} as Meta<typeof Dropdown>
 
-const Template: ComponentStory<typeof Dropdown> = (args) => (
-  <Dropdown {...args} />
-)
-
-export const Normal = Template.bind({})
-Normal.args = {
-  options: [
-    { value: null, label: '-' },
-    { value: 'one', label: 'One' },
-    { value: 'two', label: 'Two' },
-    { value: 'three', label: 'Three' },
-  ],
-  placeholder: 'Please select items from the list',
+export const Normal: StoryObj<typeof Dropdown> = {
+  args: {
+    options: [
+      { value: null, label: '-' },
+      { value: 'one', label: 'One' },
+      { value: 'two', label: 'Two' },
+      { value: 'three', label: 'Three' },
+    ],
+    placeholder: 'Please select items from the list',
+  },
+  render: (args) => <Dropdown {...args} />,
 }
 
-export const InitialValue = Template.bind({})
-InitialValue.args = {
-  options: [
-    { value: null, label: '-' },
-    { value: 'one', label: 'One' },
-    { value: 'two', label: 'Two' },
-    { value: 'three', label: 'Three' },
-  ],
-  placeholder: 'Please select items from the list',
-  value: 'one',
+export const InitialValue: StoryObj<typeof Dropdown> = {
+  args: {
+    options: [
+      { value: null, label: '-' },
+      { value: 'one', label: 'One' },
+      { value: 'two', label: 'Two' },
+      { value: 'three', label: 'Three' },
+    ],
+    placeholder: 'Please select items from the list',
+    value: 'one',
+  },
+  render: (args) => <Dropdown {...args} />,
 }
 
-export const Many = Template.bind({})
-Many.args = {
-  options: Array.from(Array(20), (_v, k) => {
-    return { value: k.toString(), label: k.toString() }
-  }),
-  placeholder: 'Please select items from the list',
+export const Many: StoryObj<typeof Dropdown> = {
+  args: {
+    options: Array.from(Array(20), (_v, k) => {
+      return { value: k.toString(), label: k.toString() }
+    }),
+    placeholder: 'Please select items from the list',
+  },
+  render: (args) => <Dropdown {...args} />,
 }

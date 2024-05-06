@@ -1,8 +1,8 @@
-import { ComponentMeta } from '@storybook/react'
+import type { Meta } from '@storybook/react'
 import Breadcrumb from './index'
 import BreadcrumbItem from 'components/atoms/BreadcrumbItem'
 
-export default { title: 'Molecules/Breadcrumb' } as ComponentMeta<
+export default { title: 'Molecules/Breadcrumb' } as Meta<
   typeof Breadcrumb
 >
 

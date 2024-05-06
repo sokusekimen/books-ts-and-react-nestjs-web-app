@@ -1,4 +1,4 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/react'
 import Text from './index'
 
 export default {
@@ -130,9 +130,7 @@ export default {
       },
     },
   },
-} as ComponentMeta<typeof Text>
-
-const Template: ComponentStory<typeof Text> = (args) => <Text {...args} />
+} as Meta<typeof Text>
 
 const longText = `It is a long established fact that a reader will be
 distracted by the readable content of a page when looking at its layout.
@@ -144,20 +142,32 @@ search for lorem ipsum will uncover many web sites still in their infancy.
 Various versions have evolved over the years, sometimes by accident,
 sometimes on purpose(injected humour and the like).`
 
-export const ExtraSmall = Template.bind({})
-ExtraSmall.args = { variant: 'extraSmall', children: longText }
+export const PrimaExtraSmallry: StoryObj<typeof Text> = {
+  args:  { variant: 'extraSmall', children: longText },
+  render: (args) => <Text {...args} />,
+}
 
-export const Small = Template.bind({})
-Small.args = { variant: 'small', children: longText }
+export const Small: StoryObj<typeof Text> = {
+  args:  { variant: 'small', children: longText },
+  render: (args) => <Text {...args} />,
+}
 
-export const Medium = Template.bind({})
-Medium.args = { variant: 'medium', children: longText }
+export const Medium: StoryObj<typeof Text> = {
+  args:  { variant: 'medium', children: longText },
+  render: (args) => <Text {...args} />,
+}
 
-export const MediumLarge = Template.bind({})
-MediumLarge.args = { variant: 'mediumLarge', children: longText }
+export const MediumLarge: StoryObj<typeof Text> = {
+  args:  { variant: 'mediumLarge', children: longText },
+  render: (args) => <Text {...args} />,
+}
 
-export const Large = Template.bind({})
-Large.args = { variant: 'large', children: longText }
+export const Large: StoryObj<typeof Text> = {
+  args:  { variant: 'large', children: longText },
+  render: (args) => <Text {...args} />,
+}
 
-export const ExtraLarge = Template.bind({})
-ExtraLarge.args = { variant: 'extraLarge', children: longText }
+export const ExtraLarge: StoryObj<typeof Text> = {
+  args:  { variant: 'extraLarge', children: longText },
+  render: (args) => <Text {...args} />,
+}
