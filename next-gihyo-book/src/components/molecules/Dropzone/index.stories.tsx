@@ -30,12 +30,10 @@ export default {
       },
     },
     acceptedFileTypes: {
-      options: {
-        control: { type: 'array' },
-        description: '受け付けるファイルタイプ',
-        table: {
-          type: { summary: 'array' },
-        },
+      control: { type: 'multi-select' },
+      description: '受け付けるファイルタイプ',
+      table: {
+        type: { summary: 'multi-select' },
       },
     },
     onDrop: {

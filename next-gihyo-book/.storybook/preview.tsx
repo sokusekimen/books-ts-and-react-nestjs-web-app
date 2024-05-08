@@ -1,11 +1,10 @@
-import React from "react";
-import type { Preview } from "@storybook/react";
+import type { Preview } from '@storybook/react'
 import { createGlobalStyle, ThemeProvider } from 'styled-components'
-
 import { theme } from '../src/themes'
-import * as NextImage from 'next/image'
+import React from 'react'
+// import * as NextImage from 'next/image'
 
-export const GlobalStyle = createGlobalStyle`
+const GlobalStyle = createGlobalStyle`
   html,
   body,
   textarea {
@@ -29,20 +28,21 @@ const preview: Preview = {
     controls: {
       matchers: {
         color: /(background|color)$/i,
-        date: /Date$/,
-      },
-    },
-    actions: { argTypesRegex: '^on.*' },
-    decorators: [
-      (Story) => (
+        date: /Date$/i
+      }
+    }
+  },
+  decorators: [
+    (story) => {
+      return (
         <ThemeProvider theme={theme}>
           <GlobalStyle />
-          <Story />
+          {story()}
         </ThemeProvider>
-      ),
-    ],
-  },
-};
+      )
+    }
+  ]
+}
 
 // TODO: Cannot redefine property: default となり動かないのでコメントアウト
 // next/imageの差し替え

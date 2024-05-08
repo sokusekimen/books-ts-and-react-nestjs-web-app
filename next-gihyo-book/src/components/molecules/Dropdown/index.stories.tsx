@@ -5,10 +5,10 @@ export default {
   title: 'Molecules/Dropdown',
   argTypes: {
     options: {
-      control: { type: 'array' },
+      control: { type: 'multi-select' },
       description: 'ドロップダウンの選択肢',
       table: {
-        type: { summary: 'array' },
+        type: { summary: 'multi-select' },
       },
     },
     hasError: {

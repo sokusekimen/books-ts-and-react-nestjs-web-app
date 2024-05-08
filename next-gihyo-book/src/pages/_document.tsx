@@ -22,7 +22,7 @@ export default class MyDocument extends Document {
         styles: [
           <>
             {initialProps.styles}
-            {sheet.getStyleElement}
+            {sheet.getStyleElement()}
           </>,
         ],
       }
