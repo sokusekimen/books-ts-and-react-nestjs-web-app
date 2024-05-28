@@ -8,7 +8,7 @@ enum Direction {
 }
 
 let direction: Direction = Direction.Left;
-console.log(direction); // -> enum野デフォルトとして2が表示される
+console.log(direction); // -> enumのデフォルトとして2が表示される
 
 enum Direction {
   Up = 'Up',
