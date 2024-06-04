@@ -181,3 +181,9 @@ function isLineHeightThemeKeys(
 ): prop is LineHeightThemeKeys {
   return Object.keys(theme.lineHeights).filter((key) => key == prop).length > 0
 }
+
+// ThemeProviderでは自前の型が行き渡らないので上書き
+// ref: https://qiita.com/Takepepe/items/eec6e1d2101570e7e241
+declare module 'styled-components' {
+  interface DefaultTheme extends AppTheme {}
+}
